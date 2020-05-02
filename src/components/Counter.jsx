@@ -4,10 +4,6 @@ const Counter = () => {
   
   const[count, setCount] = useState(0);
 
-  const handleChange = event => {
-    setCount(event.target.value)
-  }
-
   return (
     <div>
       <p>The counter is at : {count} </p>
@@ -15,7 +11,7 @@ const Counter = () => {
         type="text" 
         name="initial-count"
         value={count}
-        onChange={handleChange}
+        onChange={event => setCount(event.target.value)}
       />
       <button onClick={() => setCount(count + 1)}>>
         +1
